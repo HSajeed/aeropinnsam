@@ -157,8 +157,8 @@ aeropinnsam/
 
 ## 👤 Author
 
-**Sajeed**  
-*Aerospace Engineering & Machine Learning*
+**Sajeed Hussain**  
+*Aerospace Engineering*
 
 ---
 
