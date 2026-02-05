@@ -77,13 +77,13 @@ The graph explains the need for physics informed penalizing to not just follow d
 
 ![Velocity vs SPL](docs/velocity_spl_plot.png)
 
-This clearly explains the difference between "Simulating a Law" and "Discovering the Truth." Tho the single seed run (blue line in the 2nd graph) looks "better" because it tracks the black theoretical line almost perfectly at high velocities. It minimized the Physics Loss (λ=100) so well that it effectively ignored the data pints at the edges and prioritised LIghthill's power law.
+1. This clearly explains the difference between "Simulating a Law" and "Discovering the Truth." Tho the single seed run (blue line in the 2nd graph) looks "better" because it tracks the black theoretical line almost perfectly at high velocities. It minimized the Physics Loss (λ=100) so well that it effectively ignored the data pints at the edges and prioritised LIghthill's power law.
 
-The model discovered a Deviation from Theory. While Lighthill predicts a U^5 scaling, the ensemble consistently converges to a slightly shallower slope at high velocities. This suggests that for this specific airfoil thickness and AOA, the effective acoustic scaling is dampened (perhaps due to viscous effects or experimental setup), which a single seed run missed by overfitting the constraint.
+2. The model discovered a Deviation from Theory. While Lighthill predicts a U^5 scaling, the ensemble consistently converges to a slightly shallower slope at high velocities. This suggests that for this specific airfoil thickness and AOA, the effective acoustic scaling is dampened (perhaps due to viscous effects or experimental setup), which a single seed run missed by overfitting the constraint.
 
-This is the main reason to implement the ensemble (training on random seeds and selecting the best 3 predicting models and taking a mean) insted of depending on a random single seed and hope it lands in a global minima.
+3. This is the main reason to implement the ensemble (training on random seeds and selecting the best 3 predicting models and taking a mean) insted of depending on a random single seed and hope it lands in a global minima.
 
-
+4. **A technical report explaining every aspect is under process.**
 
 
 ## 🚀 Quick Start
