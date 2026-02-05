@@ -69,19 +69,22 @@ The **Sharpness-Aware Minimization (SAM)** optimizer finds parameters in "flat" 
 
 The trained model follows Lighthill's theoretical scaling law, demonstrating successful physics-informed learning:
 
+The graph explains the need for physics informed penalizing to not just follow data but predict based on laws that govern the phenomenon. (Theoritically)
+
+![Data only vs PINNs](docs/standard_pinns.png)
+
+![Data only vs PINNs](docs/single_seed.png)
+
 ![Velocity vs SPL](docs/velocity_spl_plot.png)
 
-### Training Convergence
+This clearly explains the difference between "Simulating a Law" and "Discovering the Truth." Tho the single seed run (blue line in the 2nd graph) looks "better" because it tracks the black theoretical line almost perfectly at high velocities. It minimized the Physics Loss (λ=100) so well that it effectively ignored the data pints at the edges and prioritised LIghthill's power law.
 
-```
-Epoch 0:   Loss 0.94860
-Epoch 100: Loss 0.39024
-Epoch 200: Loss 0.28056
-...
-Epoch 900: Loss 0.09646
-```
+The model discovered a Deviation from Theory. While Lighthill predicts a U^5 scaling, the ensemble consistently converges to a slightly shallower slope at high velocities. This suggests that for this specific airfoil thickness and AOA, the effective acoustic scaling is dampened (perhaps due to viscous effects or experimental setup), which a single seed run missed by overfitting the constraint.
 
----
+This is the main reason to implement the ensemble (training on random seeds and selecting the best 3 predicting models and taking a mean) insted of depending on a random single seed and hope it lands in a global minima.
+
+
+
 
 ## 🚀 Quick Start
 
@@ -123,7 +126,7 @@ aeropinnsam/
 │   ├── data.py            # Data loading
 │   └── audio.py           # Auralization
 ├── outputs/                # Generated outputs
-│   └── airfoil_noise.wav  # Sample audio
+│
 └── docs/                   # Documentation
     └── methodology.md     # Technical details
 ```
@@ -136,6 +139,10 @@ aeropinnsam/
 2. **Uncertainty Quantification**: Bayesian neural networks for prediction confidence intervals
 3. **Transfer Learning**: Adapt to different airfoil geometries with limited data
 4. **Real-Time Prediction**: Optimize for embedded systems in wind tunnel testing
+
+ **AND**
+
+**A technical report explaining every aspect.**
 
 ---
 
