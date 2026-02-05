@@ -3,7 +3,7 @@
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)](https://pytorch.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YOUR_USERNAME/aeropinnsam/blob/main/aero_pinn_sam.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/HSajeed/aeropinnsam/blob/main/aero_pinn_sam.ipynb)
 
 ## 📋 Abstract
 
@@ -93,7 +93,7 @@ Click the "Open in Colab" badge above to run the notebook directly in your brows
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/aeropinnsam.git
+git clone https://github.com/HSajeed/aeropinnsam.git
 cd aeropinnsam
 
 # Create virtual environment
